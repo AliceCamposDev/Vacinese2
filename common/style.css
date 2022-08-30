@@ -1,0 +1,38 @@
+.banner {
+    color: rgb(244, 250, 245);
+    text-align: left;
+    width: 100%;
+    background-color: rgb(6, 112, 29);
+    top: -20px;
+    height: 60px;
+    position: relative;
+    box-shadow: rgb(6, 112, 29) 0 2px 6px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.banner h2{
+    padding-left: 30px;
+    padding-top: 25px;
+    background-color: blueviolet;
+    margin: 0;
+    height: auto;
+}
+.banner img{
+    padding-top:2px;
+    background-color: blueviolet;
+
+}
+.defaultBody{
+    text-align: center;
+    background-color: rgb(244, 250, 245);
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    background-image: url("../images/backgroundImage.png");
+}
+
+
+
+
+
+

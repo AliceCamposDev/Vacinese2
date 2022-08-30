@@ -1,0 +1,13 @@
+.menuOption{
+    background: none;
+    backdrop-filter: blur(20px);
+    border: 1px solid rgb(0, 0, 0);
+    width: 40%;
+    height: 60px;
+    font-size: 100%;
+    cursor: pointer;
+    opacity: 1;
+}
+.menuOption p{
+    opacity: 1;
+}
