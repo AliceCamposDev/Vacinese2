@@ -22,7 +22,6 @@ if (!SessionManagement::is_user_logged()) {
 
 <body class="defaultBody">
     <header class="banner"> 
-        <!--//TODO: CSS HAHAHHAHHAHAHAAHAHAHAHHAHAHAHAHAHAAHHAHHAHAHAAHAHAHAHHAHAHAHAHAHAAHHAHHAHAHAAHAHAHAHHAHAHAHAHAHA -->
         <h2>
             Vacine-se
         </h2>
@@ -37,11 +36,13 @@ if (!SessionManagement::is_user_logged()) {
             <button class="menuOption" id="buttonPacientes" onmouseover="mouseOverHighlight(buttonPacientes)" onmouseout="mouseOutHighlight(buttonPacientes)"> <p>Procurar Paciente</p></button>
         </a>
         <br><br>
-        <a href="auditoria.html" >
+        <!-- <a href="auditoria.html" >
             <button class="menuOption" id="buttonAuditoria" onmouseover="mouseOverHighlight(buttonAuditoria)" onmouseout="mouseOutHighlight(buttonAuditoria)">Exibir Registro de Auditoria</button>
-        </a>
+        </a> 
         <br><br>
-        <a href="cadastroCampanha.php">
+    //TODO: css hover > js onmosuover
+    -->
+        <a href="../cadastrarCampanha/cadastrarCampanha.php">
             <button class="menuOption" id="buttonCadastroCampanha" onmouseover="mouseOverHighlight(buttonCadastroCampanha)" onmouseout="mouseOutHighlight(buttonCadastroCampanha)">Cadastrar Campanha</button>
         </a>
         <br><br>
