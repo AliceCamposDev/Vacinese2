@@ -4,7 +4,9 @@ class UserRepository{
 
     public static function get_user_by_search($search){ 
         $PDO = Connection::get_connection();
-        $cmd = $PDO->prepare("SELECT id FROM vacinese2.paciente WHERE or cpf = $search or nome like %$search% or sobrenome like %$search% order by nome");
+        $cmd = $PDO->prepare("SELECT id FROM vacinese2.paciente WHERE cpf = :search or nome like '%$search%' or sobrenome like '%$search%'");
+        $cmd->bindparam(":search", $search);
+        $cmd->execute();
         return $cmd->fetchAll(PDO::FETCH_ASSOC);
     } 
 

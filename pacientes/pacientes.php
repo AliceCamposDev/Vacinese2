@@ -32,9 +32,9 @@ if (!SessionManagement::is_user_logged()) {
 
     <h1>Pesquisar informações de usuário </h1>
 
-    <form id="form-pesquisa" action="" method="post">
-        <label for="pesquisa">Nome desejado: </label>
-        <input type="text" name="pesquisa" id="pesquisa">
+    <form id="form-search" action="" method="post">
+        <label for="search">Nome desejado: </label>
+        <input type="text" name="search" id="search">
         <input type="submit" name="searchButton" id="searchButton" value="Pesquisar">
     </form>
 
@@ -49,24 +49,26 @@ if (!SessionManagement::is_user_logged()) {
                 <th></th>
             </tr>
             <?php
-            $ids = array ("3","1","2");
-            foreach ($ids as $id) {
-                if (UserRepository::get_user_name($id) != null){
-                    printf($id); 
-                    ?>
-                        <tr> 
-                            <td><?php echo UserRepository::get_user_name($id)["nome"] ?></td>
-                            <td><?php echo UserRepository::get_user_surname($id)["sobrenome"] ?></td>
-                            <td><?php echo UserRepository::get_user_cpf($id)["cpf"] ?></td>
-                            <td><a href="#">Editar</td>
-                            <td><a href="#" onclick="confirmarExclusao('<?php UserRepository::get_user_cpf($id) ?>', 
-                                                                       '<?php  UserRepository::get_user_name($id) ?>',
-                                                                       '<?php  UserRepository::get_user_surname($id) ?>')">
-                                                                       Excluir</a>
-                            </td>
-                        </tr>
-                    <?php
-                }
+            if($_SERVER['REQUEST_METHOD'] === 'POST'){
+                $search= $_POST["search"];
+                $ids = UserRepository::get_user_by_search($search);
+                foreach ($ids as $id) {
+                    if (UserRepository::get_user_name($id["id"]) != null){
+            ?>
+                <tr> 
+                    <td><?php echo UserRepository::get_user_name($id["id"])["nome"] ?></td>
+                    <td><?php echo UserRepository::get_user_surname($id["id"])["sobrenome"] ?></td>
+                    <td><?php echo UserRepository::get_user_cpf($id["id"])["cpf"] ?></td>
+                    <td><a href="#">Editar</td>
+                    <td><a href="#" onclick="confirmarExclusao('<?php UserRepository::get_user_cpf($id) ?>', 
+                                                               '<?php  UserRepository::get_user_name($id) ?>',
+                                                               '<?php  UserRepository::get_user_surname($id) ?>')">
+                                                               Excluir</a>
+                    </td>
+                 </tr>
+                 <?php
+                    }   
+                }  
             }
             ?>
         </table>

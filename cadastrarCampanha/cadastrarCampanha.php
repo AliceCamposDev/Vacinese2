@@ -40,7 +40,6 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
                 foreach ($vaccines as $vaccine){
                     $cont ++;
                     echo ('<option value="'.$cont.'"> '.$vaccine["nome"].' </option>');
-                    echo "a";
                 }
                 ?>
             </select>
