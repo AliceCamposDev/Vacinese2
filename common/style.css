@@ -14,13 +14,13 @@
 .banner h2{
     padding-left: 30px;
     padding-top: 25px;
-    background-color: blueviolet;
+    /* background-color: blueviolet;*/
     margin: 0;
     height: auto;
 }
 .banner img{
     padding-top:2px;
-    background-color: blueviolet;
+    /*background-color: blueviolet;*/
 
 }
 .defaultBody{

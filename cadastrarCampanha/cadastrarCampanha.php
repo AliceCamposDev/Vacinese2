@@ -1,5 +1,6 @@
 <?php
 require_once('../sessionManagement.php');
+require_once("../repository/vaccineRepository.php");
 
 if($_SERVER['REQUEST_METHOD'] === 'POST'){
     $nomeCampanha = $_POST["nomeCampanha"];
@@ -32,10 +33,16 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
     <form action="" method="post">
         <div>
             <label for="vacina">Vacina</label>
-            <!-- //TODO: pegar vacinas do bd -->
             <select name="cars" id="cars">
-                <option value="1">pfizer</option>
-                <
+            <?php
+                $vaccines = VaccineRepository::get_vaccines();
+                $cont = 0;
+                foreach ($vaccines as $vaccine){
+                    $cont ++;
+                    echo ('<option value="'.$cont.'"> '.$vaccine["nome"].' </option>');
+                    echo "a";
+                }
+                ?>
             </select>
         </div>
         <br>

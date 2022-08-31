@@ -49,15 +49,15 @@ if (!SessionManagement::is_user_logged()) {
                 <th></th>
             </tr>
             <?php
-            $ids = array ("3","3","1");
+            $ids = array ("3","1","2");
             foreach ($ids as $id) {
                 if (UserRepository::get_user_name($id) != null){
                     printf($id); 
                     ?>
                         <tr> 
-                            <td><?php echo UserRepository::get_user_name($id) //TODO: printar isso aaaaaaaaaaaaaa  ?></td>
-                            <td><?php echo UserRepository::get_user_surname($id) ?></td>
-                            <td><?php echo UserRepository::get_user_cpf($id) ?></td>
+                            <td><?php echo UserRepository::get_user_name($id)["nome"] ?></td>
+                            <td><?php echo UserRepository::get_user_surname($id)["sobrenome"] ?></td>
+                            <td><?php echo UserRepository::get_user_cpf($id)["cpf"] ?></td>
                             <td><a href="#">Editar</td>
                             <td><a href="#" onclick="confirmarExclusao('<?php UserRepository::get_user_cpf($id) ?>', 
                                                                        '<?php  UserRepository::get_user_name($id) ?>',
